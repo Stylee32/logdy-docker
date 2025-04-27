@@ -7,6 +7,7 @@ echo "Configuring logdy service"
 
 if [ -z $LOGDY_PORT ]; then LOGDY_CMD=" $LOGDY_CMD --port=8080"; else LOGDY_CMD=" $LOGDY_CMD --port=$LOGDY_PORT"; fi
 if [ ! -z $LOGDY_PASS ]; then LOGDY_CMD=" $LOGDY_CMD --ui-pass=$LOGDY_PASS"; fi
+if [ ! -z $LOGDY_CONFIG ]; then LOGDY_CMD=" $LOGDY_CMD --config=$LOGDY_CONFIG"; fi
 if [ -z $LOGDY_MAX_MESSAGE ]; then LOGDY_CMD=" $LOGDY_CMD --max-message-count=1000"; else LOGDY_CMD=" $LOGDY_CMD --max-message-count=$LOGDY_MAX_MESSAGE"; fi
 
 if [ -z $LOGDY_API_KEY ]; then
