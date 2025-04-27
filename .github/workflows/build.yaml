@@ -33,5 +33,5 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm64
           tags: |
-            ghcr.io/${{ env.REPO_OWNER }}/logdy:latest
-            ghcr.io/${{ env.REPO_OWNER }}/logdy:0.16.0
+            ghcr.io/stylee32/logdy:latest
+            ghcr.io/stylee32/logdy:0.16.0
