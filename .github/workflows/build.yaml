@@ -7,7 +7,7 @@ on:
       - main
     paths:
       - '.github/**'
-	  
+
 permissions:
   contents: write
   packages: write
