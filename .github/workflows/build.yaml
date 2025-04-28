@@ -2,11 +2,7 @@ name: ci
 
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - '.github/**'
+  workflow_dispatch:
 
 permissions:
   contents: write
