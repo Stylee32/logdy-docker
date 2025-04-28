@@ -28,9 +28,9 @@ if [[ "$LOGDY_MODE" == "follow" ]]; then
 elif [[ "$LOGDY_MODE" == "follow_full_read" ]]; then
   LOGDY_CMD=" $LOGDY_CMD follow"
   if [ -z $LOGDY_FOLLOW_FILES ]; then 
-    LOGDY_CMD=" $LOGDY_CMD /data/*.log --fullread"
+    LOGDY_CMD=" $LOGDY_CMD /data/*.log --full-read"
   else 
-    LOGDY_CMD=" $LOGDY_CMD $LOGDY_FOLLOW_FILES --fullread"
+    LOGDY_CMD=" $LOGDY_CMD $LOGDY_FOLLOW_FILES --full-read"
   fi
 else
   LOGDY_CMD=" $LOGDY_CMD socket"
