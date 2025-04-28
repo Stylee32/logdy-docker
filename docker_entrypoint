@@ -19,12 +19,16 @@ else
 fi
 
 if [[ "$LOGDY_MODE" == "follow" ]]; then 
-  LOGDY_CMD=" $LOGDY_CMD follow"
-  if [ -z $LOGDY_FOLLOW_FILES ]; then LOGDY_CMD=" $LOGDY_CMD /data/*.log"; else LOGDY_CMD=" $LOGDY_CMD $LOGDY_FOLLOW_FILES"; fi
+  LOGDY_CMD=" $LOGDY_CMD follow"
+  if [ -z $LOGDY_FOLLOW_FILES ]; then LOGDY_CMD=" $LOGDY_CMD /data/*.log"; else LOGDY_CMD=" $LOGDY_CMD $LOGDY_FOLLOW_FILES"; fi
+elif [[ "$LOGDY_MODE" == "follow_full_read" ]]; then
+  LOGDY_CMD=" $LOGDY_CMD follow" 
+  if [ -z $LOGDY_FOLLOW_FILES ]; then LOGDY_CMD=" $LOGDY_CMD /data/*.log --fullread"; else LOGDY_CMD=" $LOGDY_CMD $LOGDY_FOLLOW_FILES --fullread"; fi
 else
-  LOGDY_CMD=" $LOGDY_CMD socket"
-  if [ -z $LOGDY_SOCKET_PORTS ]; then LOGDY_CMD=" $LOGDY_CMD 10800"; else LOGDY_CMD=" $LOGDY_CMD $LOGDY_SOCKET_PORTS"; fi
+  LOGDY_CMD=" $LOGDY_CMD socket"
+  if [ -z $LOGDY_SOCKET_PORTS ]; then LOGDY_CMD=" $LOGDY_CMD 10800"; else LOGDY_CMD=" $LOGDY_CMD $LOGDY_SOCKET_PORTS"; fi
 fi
+
 
 echo "Starting logdy service with configuration: $LOGDY_CMD"
 
